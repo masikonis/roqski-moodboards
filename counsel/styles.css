@@ -1,0 +1,604 @@
+/* ============================================
+   Counsel — Moodboard Styles
+   ============================================ */
+
+:root {
+  --teal: #0B3030;
+  --orange: #CD4A16;
+  --white: #FFFFFF;
+  --rule-teal: #0B3030;
+  --rule-orange: #CD4A16;
+  --annotation: rgba(11, 48, 48, 0.35);
+  --bg-expand: #FBF9F7;
+  --content-width: 680px;
+  --annotation-width: 180px;
+  --annotation-gap: 48px;
+}
+
+/* ---- Reset & Base ---- */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--white);
+  color: var(--teal);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/* ---- Layout ---- */
+
+.section {
+  position: relative;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ---- Reveal / Stagger Animation ---- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.reveal--slow {
+  transition-duration: 800ms;
+  transform: none;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--slow.is-visible {
+  opacity: 1;
+}
+
+/* Stagger delays */
+.reveal[data-stagger="0"] { transition-delay: 0ms; }
+.reveal[data-stagger="1"] { transition-delay: 90ms; }
+.reveal[data-stagger="2"] { transition-delay: 180ms; }
+.reveal[data-stagger="3"] { transition-delay: 270ms; }
+.reveal[data-stagger="4"] { transition-delay: 360ms; }
+.reveal[data-stagger="5"] { transition-delay: 450ms; }
+.reveal[data-stagger="6"] { transition-delay: 540ms; }
+.reveal[data-stagger="7"] { transition-delay: 630ms; }
+
+/* ---- Rules ---- */
+
+.rule {
+  border: none;
+  height: 1px;
+  width: 100%;
+}
+
+.rule--teal {
+  background: var(--rule-teal);
+}
+
+.rule--orange {
+  background: var(--rule-orange);
+}
+
+/* ---- Annotations (default: inline above content) ---- */
+
+.annotation {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--annotation);
+  max-width: 360px;
+  margin-bottom: 20px;
+}
+
+/* ============================================
+   Section 1: Direction Label & Introduction
+   ============================================ */
+
+.section--intro {
+  padding-top: 56px;
+}
+
+.direction-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--teal);
+}
+
+.direction-description {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: var(--teal);
+  opacity: 0.65;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.direction-note {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--teal);
+  opacity: 0.35;
+  margin-top: 16px;
+}
+
+/* ============================================
+   Section 2: Opening Statement
+   ============================================ */
+
+.section--statement {
+  margin-top: clamp(100px, 12vh, 160px);
+}
+
+.display-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--teal);
+}
+
+.section--statement .rule--orange {
+  margin-top: 56px;
+}
+
+/* ============================================
+   Section 3: Body Text Passage
+   ============================================ */
+
+.section--body {
+  margin-top: clamp(72px, 9vh, 112px);
+}
+
+.body-column {
+  max-width: 580px;
+}
+
+.body-text {
+  font-size: 17px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: var(--teal);
+}
+
+.body-text + .body-text {
+  margin-top: 24px;
+}
+
+/* ============================================
+   Section 4: Quantitative Evidence
+   ============================================ */
+
+.section--evidence {
+  margin-top: clamp(100px, 12vh, 160px);
+}
+
+.section--evidence .rule--teal {
+  margin-bottom: clamp(48px, 6vh, 80px);
+}
+
+.result {
+  padding: 0;
+}
+
+.result + .rule {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+/* First orange rule needs top spacing from the first result */
+.section--evidence .rule--orange:first-of-type {
+  margin-top: 48px;
+}
+
+.result-figure {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(40px, 5.5vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--orange);
+}
+
+.result-description {
+  font-size: 15px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--teal);
+  opacity: 0.65;
+  max-width: 380px;
+  margin-top: 10px;
+}
+
+/* ============================================
+   Section 5: People
+   ============================================ */
+
+.section--people {
+  margin-top: clamp(80px, 10vh, 140px);
+}
+
+.section-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  opacity: 0.4;
+  margin-bottom: 32px;
+}
+
+.people-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--rule-orange);
+}
+
+.person:first-child {
+  padding-top: 0;
+}
+
+.person:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.person-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--teal);
+}
+
+.person-role {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--teal);
+  opacity: 0.5;
+}
+
+.person-description {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--teal);
+  opacity: 0.55;
+  max-width: 400px;
+  margin-top: 4px;
+}
+
+/* ============================================
+   Section 6: Expandable Depth
+   ============================================ */
+
+.section--depth {
+  margin-top: clamp(80px, 10vh, 140px);
+}
+
+.section--depth .rule--teal {
+  margin-bottom: 0;
+}
+
+.expandable {
+  border-bottom: 1px solid var(--rule-orange);
+}
+
+.expandable-trigger {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  padding: 24px 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: transform 200ms ease;
+}
+
+.expandable-trigger:hover {
+  transform: scale(1.015);
+  transform-origin: left center;
+}
+
+.expandable-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(17px, 2.2vw, 20px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--teal);
+  transition: color 200ms ease;
+}
+
+.expandable-trigger:hover .expandable-label {
+  color: var(--orange);
+}
+
+.expandable-icon {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--orange);
+  flex-shrink: 0;
+  transition: transform 300ms ease, opacity 300ms ease;
+  line-height: 1;
+}
+
+.expandable-trigger[aria-expanded="true"] .expandable-icon {
+  transform: rotate(45deg);
+}
+
+.expandable-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.expandable-inner {
+  padding: 20px 28px 28px 28px;
+  opacity: 0;
+  transition: opacity 250ms ease 50ms;
+}
+
+.expandable-trigger[aria-expanded="true"] + .expandable-content {
+  background: var(--bg-expand);
+}
+
+.expandable-trigger[aria-expanded="true"] + .expandable-content .expandable-inner {
+  opacity: 1;
+}
+
+.expandable-inner p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 400;
+  color: var(--teal);
+  opacity: 0.75;
+  max-width: 580px;
+}
+
+/* ============================================
+   Section 7: Link & Hover Moment
+   ============================================ */
+
+.section--links {
+  margin-top: clamp(72px, 9vh, 112px);
+}
+
+.section--links .body-text {
+  max-width: 580px;
+}
+
+.text-link {
+  color: var(--orange);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(205, 74, 22, 0.3);
+  transition: border-color 200ms ease, transform 200ms ease;
+  display: inline;
+}
+
+.text-link:hover {
+  border-bottom-color: rgba(205, 74, 22, 0.8);
+}
+
+/* ============================================
+   Section 8: Closing Beat
+   ============================================ */
+
+.section--closing {
+  margin-top: clamp(100px, 15vh, 180px);
+  padding-bottom: clamp(100px, 15vh, 180px);
+}
+
+.closing-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--teal);
+  opacity: 0.4;
+}
+
+.dot {
+  opacity: 0.5;
+}
+
+/* ============================================
+   Wide screens: annotations in left margin
+   Uses padding-left gutter on .section
+   180px annotation + 48px gap + 680px content = 908px
+   ============================================ */
+
+@media (min-width: 1100px) {
+  .section {
+    max-width: 908px;
+    padding-left: 228px;
+    padding-right: 0;
+  }
+
+  .annotation {
+    position: absolute;
+    left: 0;
+    width: var(--annotation-width);
+    max-width: var(--annotation-width);
+    margin-bottom: 0;
+  }
+
+  .section--statement .annotation {
+    top: 8px;
+  }
+
+  .section--evidence .annotation {
+    top: calc(1px + clamp(48px, 6vh, 80px));
+  }
+
+  .section--people .annotation {
+    top: 48px;
+  }
+
+  .section--depth .annotation {
+    top: 56px;
+  }
+}
+
+/* ============================================
+   Mid-width: annotations inline above content
+   ============================================ */
+
+@media (min-width: 769px) and (max-width: 1099px) {
+  .section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* ============================================
+   Mobile: ≤768px
+   ============================================ */
+
+@media (max-width: 768px) {
+  .section--intro {
+    padding-top: 40px;
+  }
+
+  .annotation {
+    font-size: 11px;
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .direction-description {
+    max-width: 100%;
+  }
+
+  .section--statement {
+    margin-top: 80px;
+  }
+
+  .display-heading {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .section--statement .rule--orange {
+    margin-top: 40px;
+  }
+
+  .section--body {
+    margin-top: 56px;
+  }
+
+  .body-column {
+    max-width: 100%;
+  }
+
+  .section--evidence {
+    margin-top: 72px;
+  }
+
+  .section--evidence .rule--teal {
+    margin-bottom: 40px;
+  }
+
+  .result-figure {
+    font-size: clamp(32px, 9vw, 44px);
+  }
+
+  .result + .rule {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .section--evidence .rule--orange:first-of-type {
+    margin-top: 40px;
+  }
+
+  .section--people {
+    margin-top: 72px;
+  }
+
+  .person-name {
+    font-size: clamp(20px, 5.5vw, 24px);
+  }
+
+  .person {
+    padding: 14px 0;
+  }
+
+  .person:first-child {
+    padding-top: 0;
+  }
+
+  .person:last-child {
+    padding-bottom: 0;
+  }
+
+  .section--depth {
+    margin-top: 72px;
+  }
+
+  .expandable-trigger {
+    padding: 20px 0;
+    min-height: 48px;
+  }
+
+  .expandable-label {
+    font-size: clamp(16px, 4.2vw, 18px);
+  }
+
+  .section--links {
+    margin-top: 56px;
+  }
+
+  .section--links .body-text {
+    max-width: 100%;
+  }
+
+  .section--closing {
+    margin-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .closing-text {
+    font-size: clamp(12px, 3.5vw, 15px);
+  }
+}

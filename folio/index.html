@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Folio — Brand Direction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Section 1: Direction Intro -->
+  <header class="section section--intro">
+    <h1 class="direction-name">Folio</h1>
+    <p class="direction-description">Heavy horizontal rules and bold typographic structure. The lines and the type are the design. Closer to a printed legal brief or a Vignelli-era annual report than to anything else in the legal industry</p>
+    <p class="direction-note">This explores typography, motion, and spacing. Page layout and imagery come in the next phase.</p>
+  </header>
+
+  <!-- Section 2: Opening Statement -->
+  <section class="section section--statement">
+    <div class="annotation" aria-hidden="true">Heavy horizontal rules frame the section like chapter breaks. They are the structure, not just dividers.</div>
+    <hr class="rule rule-draw" style="transition-delay: 0ms">
+    <div class="reveal" style="transition-delay: 200ms">
+      <h2 class="display-heading">Business Litigation Across<br>Texas State and Federal Courts</h2>
+    </div>
+    <hr class="rule rule-draw" style="transition-delay: 500ms">
+  </section>
+
+  <!-- Section 3: Body Text + Links -->
+  <section class="section section--body">
+    <hr class="rule rule--partial rule-draw" style="transition-delay: 0ms">
+    <h3 class="content-heading reveal" style="transition-delay: 150ms">The business underneath the dispute</h3>
+    <p class="body-text reveal" style="transition-delay: 300ms">A decade-long partnership unravels over a disagreement about valuation. A real estate closing falls apart when title issues surface at the last minute. A former employee walks out the door with a client list and a business plan.</p>
+    <p class="body-text reveal" style="transition-delay: 450ms">Each of these situations has a legal answer and a business answer. The firm starts with the <a href="#" class="text-link">business context</a> and works toward the <a href="#" class="text-link">courtroom position</a>.</p>
+  </section>
+
+  <!-- Section 4: Quantitative Evidence -->
+  <section class="section section--evidence">
+    <div class="annotation" aria-hidden="true">Orange appears only on evidence: figures, court names, timelines. It marks proof.</div>
+    <hr class="rule rule-draw" style="transition-delay: 0ms">
+    <p class="section-label reveal" style="transition-delay: 200ms">Representative Results</p>
+    <div class="results">
+      <div class="result reveal" style="transition-delay: 350ms">
+        <span class="result-figure">$6.1M</span>
+        <p class="result-description">Jury verdict in a commercial fraud case, <span class="evidence-highlight">Tarrant County</span></p>
+      </div>
+      <hr class="rule rule--partial-narrow rule-draw" style="transition-delay: 500ms">
+      <div class="result reveal" style="transition-delay: 650ms">
+        <span class="result-figure">$0</span>
+        <p class="result-description">Client exposure after directed verdict on all counterclaims, <span class="evidence-highlight">Northern District of Texas</span></p>
+      </div>
+      <hr class="rule rule--partial-narrow rule-draw" style="transition-delay: 800ms">
+      <div class="result reveal" style="transition-delay: 950ms">
+        <span class="result-figure">3 weeks</span>
+        <p class="result-description">From TRO hearing to agreed resolution in a trade secret matter, <span class="evidence-highlight">Collin County</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Teal Ground + People -->
+  <div class="teal-ground">
+    <section class="section section--people">
+      <div class="annotation annotation--light" aria-hidden="true">Teal isn't a container. It's a shift in the page surface. Same content structure, different ground color.</div>
+      <hr class="rule rule--white rule-draw" style="transition-delay: 0ms">
+      <p class="section-label section-label--light reveal" style="transition-delay: 200ms">The Attorneys</p>
+      <ul class="people-list">
+        <li class="person reveal" style="transition-delay: 350ms">
+          <span class="person-name">Kelvin Roquemore</span>
+          <span class="person-role">Managing Partner</span>
+        </li>
+        <li class="person reveal" style="transition-delay: 470ms">
+          <span class="person-name">Doug Skierski</span>
+          <span class="person-role">Managing Partner</span>
+        </li>
+        <li class="person reveal" style="transition-delay: 590ms">
+          <span class="person-name">Alex L. Davis</span>
+          <span class="person-role">Real Estate & Litigation</span>
+        </li>
+        <hr class="rule rule--partial-narrow rule--white rule-draw" style="transition-delay: 650ms; opacity: 0.2">
+        <li class="person reveal" style="transition-delay: 710ms">
+          <span class="person-name">Jennifer L. Culver</span>
+          <span class="person-role">Commercial Litigation</span>
+        </li>
+        <li class="person reveal" style="transition-delay: 830ms">
+          <span class="person-name">Mark Ivanyo</span>
+          <span class="person-role">Of Counsel</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Section 6: Expandable Depth -->
+  <section class="section section--depth">
+    <div class="annotation" aria-hidden="true">Inside the expanded sections, only the sans-serif appears. Serif on the surface, sans underneath. That shift tells you you've gone one layer deeper.</div>
+    <hr class="rule rule-draw" style="transition-delay: 0ms">
+    <p class="section-label reveal" style="transition-delay: 200ms">Practice Areas</p>
+    <div class="expandables reveal" style="transition-delay: 400ms">
+      <div class="expandable">
+        <button class="expandable-trigger" aria-expanded="false">
+          <span class="expandable-label">Business Litigation</span>
+          <span class="expandable-icon">+</span>
+        </button>
+        <div class="expandable-content">
+          <div class="expandable-inner">
+            <p>Companies and their principals in commercial disputes: partnership dissolutions, shareholder actions, breach of contract, and business torts across Texas state and federal courts.</p>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <button class="expandable-trigger" aria-expanded="false">
+          <span class="expandable-label">Real Estate Litigation</span>
+          <span class="expandable-icon">+</span>
+        </button>
+        <div class="expandable-content">
+          <div class="expandable-inner">
+            <p>Commercial real estate disputes: breach of purchase agreements, title conflicts, and landlord-tenant litigation for commercial properties.</p>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <button class="expandable-trigger" aria-expanded="false">
+          <span class="expandable-label">Intellectual Property</span>
+          <span class="expandable-icon">+</span>
+        </button>
+        <div class="expandable-content">
+          <div class="expandable-inner">
+            <p>Trade secrets, trademarks, and proprietary business information. Includes emergency injunctive relief when misappropriation requires immediate action.</p>
+          </div>
+        </div>
+      </div>
+      <div class="expandable">
+        <button class="expandable-trigger" aria-expanded="false">
+          <span class="expandable-label">Business Transactions</span>
+          <span class="expandable-icon">+</span>
+        </button>
+        <div class="expandable-content">
+          <div class="expandable-inner">
+            <p>Asset purchases, entity formation, corporate governance, and commercial contracts for Texas businesses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Closing Beat -->
+  <section class="section section--closing">
+    <hr class="rule rule-draw" style="transition-delay: 0ms">
+    <p class="closing-text reveal" style="transition-delay: 300ms">Dallas · Fort Worth · McKinney · Mansfield</p>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
